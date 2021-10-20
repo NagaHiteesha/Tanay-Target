@@ -39,9 +39,13 @@ function draw() {
     crossHair.y = World.mouseY;
     crossHair.x= World.mouseX;
 
-    if(mousePressedOver(targetGroup)){ 
-      targetGroup.destoryEach();    
-    }
+//     if(mousePressedOver(targetGroup)){ 
+//       targetGroup.destoryEach();    
+//     }
+// Hi Tanay, mousePressedOver is not wroking for a group so we have to use the isTouching Property
+  if(crossHair.isTouching(targetGroup)){
+    targetGroup.destroyEach();
+  }
 
       drawSprites();
   }
